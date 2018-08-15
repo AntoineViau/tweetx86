@@ -1,11 +1,8 @@
-var tube64 =
-  "sBPNEGgAoAeMyIDEEI7gMcm6yAOJyO5C0Ph4B+724MHoBu6wAO55CCjI0Oju0OjuictkiB/i2onLAcjTwIjGwP4FEPJkEpf/ANDqZIgX9tdkiBfi4tvj2e6Axwi/BALYRfRXurD/vWD/vvwB30TWiSzfBIkU3wSxAtnD2fvZwtjJ2cTYy97p2cveyt7L3sLZyuLm2cHcyNnB3Mjewdn63vvZ895M/N8c3kz831wBizSNAADgJECw+3QPweYCjQAo4LDweQTR5rDQZAIAAAVHRYH9oAB1k0KD+lB1il6/ABm1ZPOltchOwDwC4vrkYJhID4Vl/7ADzRApAMM8YmF6ZQ==";
 var binCode;
 var cycles = 3000;
 var Module = {
   arguments: ["./asm.com"],
   onRuntimeInitialized: () => {
-    binCode = base64decode(tube64);
     FS.writeFile("/asm.com", binCode);
     let dosboxconf = `
     [cpu]
