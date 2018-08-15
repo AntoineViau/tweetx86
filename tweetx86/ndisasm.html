@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <script async type="text/javascript" src="ndisasm.js"></script>
+    <script type="text/javascript" src="base64-arraybuffer.js"></script>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+
+        let ndiasm;
+        let errorMessage;
+        let output = '';
+
+        var Module = {
+            onRuntimeInitialized: () => {
+                ndisasm = Module.cwrap('ndisasm', 'number', ['string']);
+                window.parent.postMessage({ commandId: 'ndisasm', ready: true }, '*');
+            },
+            print: text => {
+                output += text + "\n";
+            },
+            printErr: text => {
+                errorMessage = text
+            }
+        };
+
+        window.onmessage = function (msg) {
+            let base64com = msg.data;
+            let now = new Date();
+            let comFileName = `/asm${now.getTime()}.com`;
+            FS.writeFile(comFileName, base64decode(base64com));
+            let lstFileName = `/asm${now.getTime()}.lst`;
+            let cmdLine = `${comFileName}`;
+            let retVal = ndisasm(cmdLine);
+            if (retVal === 0) {
+                let asmCode = output.split("\n").map(line => line.substr(28)).join("\n");
+                window.parent.postMessage({ commandId: 'ndisasm', asmCode }, '*');
+            } else {
+                window.parent.postMessage({ commandId: 'ndisasm', errorMessage }, '*');
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

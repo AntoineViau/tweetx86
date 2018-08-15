@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <link href="index.css" rel="stylesheet">
+
+    <script type="text/javascript" src="base64-arraybuffer.js"></script>
+    <script type="text/javascript" src="tweetx86.js"></script>
+
+
+</head>
+
+<body>
+    <a href="https://github.com/you">
+        <img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"
+            alt="Fork me on GitHub">
+    </a>
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead">
+            <div class="inner">
+                <h3 class="masthead-brand">TweetX86</h3>
+            </div>
+        </header>
+
+        <main role="main" class="inner cover">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="text-right">
+                        <button onClick="assemble()">Assemble</button>
+                        <button onClick="runAsm()">Run</button>
+                    </div>
+                    <textarea id="asmCode"></textarea>
+                    <div id="nasm">
+                    </div>
+                    <div id="ndisasm">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div>
+                        <div class="text-right">
+                            <button onClick="runBase64()">Run</button>
+                            <button onClick="disassemble()">Disassemble</button>
+                        </div>
+                        <textarea id="base64code"></textarea>
+                        <div class="text-right">
+                            Length:
+                            <span id="base64length">0</span>
+                        </div>
+                    </div>
+                    <div id="cycles">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Dosbox Cycles</span>
+                            </div>
+                            <input id="cycles-input" type="number" min="1" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div id="dosbox" class="text-center">
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+</body>
+
+</html>

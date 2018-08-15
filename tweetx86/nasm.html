@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <script async type="text/javascript" src="nasm.js"></script>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+
+        let nasm;
+        let errorMessage;
+
+        var Module = {
+            onRuntimeInitialized: () => {
+                nasm = Module.cwrap('nasm', 'number', ['string']);
+                window.parent.postMessage({ commandId: 'nasm', ready: true }, '*');
+            },
+            printErr: text => {
+                errorMessage = text;
+            }
+        };
+
+        window.onmessage = function (msg) {
+            let code = msg.data;
+            let now = new Date();
+            let asmFileName = `/asm${now.getTime()}.asm`;
+            let comFileName = `/asm${now.getTime()}.com`;
+            FS.writeFile(asmFileName, code);
+            let cmdLine = `-fbin ${asmFileName} -o${comFileName}`;
+            let retVal = nasm(cmdLine);
+            if (retVal === 0) {
+                let binCode = FS.readFile(comFileName);
+                window.parent.postMessage({ commandId: 'nasm', binCode }, '*');
+            } else {
+                window.parent.postMessage({ commandId: 'nasm', errorMessage }, '*');
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "tweetx86",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "static",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-static": "^0.7.10"
+  }
+}
