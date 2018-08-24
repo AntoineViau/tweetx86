@@ -21,7 +21,6 @@ $(document).ready(() => {
 });
 
 function loadSample(filename) {
-  console.log(filename);
   return fetch(filename)
     .then(response => response.text())
     .then(asmCode => $("#asmCode").val(asmCode));
