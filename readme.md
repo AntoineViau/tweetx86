@@ -1,6 +1,6 @@
 # TweetX86
 
-Pure client-side combination of Nasm, DosBox and WebAssembly to show off yout x86 skills in a tweet (or more).  
+Pure client-side combination of Nasm, DosBox and WebAssembly to show off your x86 skills in a tweet (or more).  
 You can play with it here : http://www.antoineviau.com/tweetx86
 
 ## What ?
@@ -17,13 +17,14 @@ But you can code far more than a tweet !
 ## Technicalities
 
 TweetX86 is based on :
- * a port of [Nasm](https://www.nasm.us/) to WebAssembly
- * a port of NDisasm to WebAssembly
- * [Em-DosBox](https://github.com/dreamlayers/em-dosbox) (compiled to asm.js so far)
- * [JQuery](https://github.com/jquery/jquery) and [Bootstrap](https://github.com/twbs/bootstrap) (and [one of the examples](https://getbootstrap.com/docs/4.1/examples/cover/) given on the website)
+
+- a port of [Nasm](https://www.nasm.us/) to WebAssembly
+- a port of NDisasm to WebAssembly
+- [Em-DosBox](https://github.com/dreamlayers/em-dosbox) (compiled to asm.js so far)
+- [JQuery](https://github.com/jquery/jquery) and [Bootstrap](https://github.com/twbs/bootstrap) (and [one of the examples](https://getbootstrap.com/docs/4.1/examples/cover/) given on the website)
 
 Nasm, NDisasm and Em-Dosbox are basically treated as shell commands. Each of them is a C program with a `main(int cargs, char *argvs[])`, and seems to be stateful.  
-Therefore, to make them stateless, each command is in an IFrame. When TweetX86 needs to call a command, it simply create a DOM node with the corresponding IFrame : 
+Therefore, to make them stateless, each command is in an IFrame. When TweetX86 needs to call a command, it simply create a DOM node with the corresponding IFrame :
 
     function launchCommand(commandId, msg) {
         let p = new Promise((resolve, reject) => {
@@ -44,7 +45,7 @@ Therefore, to make them stateless, each command is in an IFrame. When TweetX86 n
         return p;
     }
 
-Nasm and NDisasm have been modified to be an Emscripten compliant WASM able to accept command line arguments : 
+Nasm and NDisasm have been modified to be an Emscripten compliant WASM able to accept command line arguments :
 
     let nasm = Module.cwrap('nasm', 'number', ['string']);
     let now = new Date();
@@ -55,9 +56,9 @@ Nasm and NDisasm have been modified to be an Emscripten compliant WASM able to a
 
 ## Build
 
-First, install [Emscripten](http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html).  
+First, install [Emscripten](http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html).
 
-Then build Nasm and NDisasm : 
+Then build Nasm and NDisasm :
 
     cd nasm
     make clean
@@ -71,9 +72,8 @@ Then build Nasm and NDisasm :
     cp ./nasm.js ../tweetx86
     cp ./ndisasm.wasm ../tweetx86
     cp ./ndisasm.js ../tweetx86
-    
 
-Build Em-Dosbox : 
+Build Em-Dosbox :
 
     cd em-dosbox
     ./autogen.sh
@@ -82,13 +82,8 @@ Build Em-Dosbox :
     cp src/dosbox.js ../tweetx86
     cp src/dosbox.html.mem ../tweetx86
 
-Build and launch TweetX86 : 
+Build and launch TweetX86 :
 
     cd tweetx86
     npm install
     npm start
-
-
-
-
-
