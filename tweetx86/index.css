@@ -48,27 +48,23 @@ body {
   margin-bottom: 1rem;
 }
 
-.masthead-brand {
-  margin-bottom: 0;
-}
-.inner h3 {
-  width: 100%;
+.title {
   border-bottom: 1px solid;
   border-color: #666666;
   padding-bottom: 0.5em;
 }
 
-.inner h4 {
-  padding-top: 0.5em;
-  display: block;
-  clear: both;
-  font-size: 100%;
-  line-height: 1.75em;
-  border-bottom: 1px solid;
-  border-color: #666666;
-  padding-bottom: 0.5em;
+.title h3 {
+  display: inline-block;
+  font-size: 250%;
 }
 
+.title h4 {
+  display: inline-block;
+  font-size: 90%;
+  margin-left: 2em;
+  line-height: 1.5em;
+}
 .cover-container a {
   text-decoration: underline;
 }
