@@ -16,11 +16,16 @@ $(document).ready(() => {
     $("#base64length").text(base64code.length);
     runBase64();
   } else {
-    fetch("alok-menghrajani.asm")
-      .then(response => response.text())
-      .then(asmCode => $("#asmCode").val(asmCode));
+    loadSample("snake.asm");
   }
 });
+
+function loadSample(filename) {
+  console.log(filename);
+  return fetch(filename)
+    .then(response => response.text())
+    .then(asmCode => $("#asmCode").val(asmCode));
+}
 
 function assemble() {
   $("#base64code").val("Assembling...");

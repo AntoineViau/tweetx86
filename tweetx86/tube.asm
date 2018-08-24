@@ -1,4 +1,3 @@
-
 ;  (Ü) ( ) Ü ) ( )   256b intro by baze/3SC for Syndeecate 2001   use NASM to
 ;  ßÛß ÛÜÛ ÛÛÛ ÛÛÜ   loveC: thanks, Serzh: eat my socks dude ;]   compile the
 ;  ( ) ( ) ( ) ( )   e-mail: baze@stonline.sk, web: www.3SC.sk    source code

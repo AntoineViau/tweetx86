@@ -1,3 +1,4 @@
+; Snake
 ; Code by Alok Menghrajani
 ; https://www.quaxio.com/bootable_cd_retro_game_tweet/
 ; Thank you for the inspiration you gave me with this tweet : 
