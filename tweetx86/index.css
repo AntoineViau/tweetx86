@@ -45,11 +45,32 @@ body {
  * Header
  */
 .masthead {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .masthead-brand {
   margin-bottom: 0;
+}
+.inner h3 {
+  width: 100%;
+  border-bottom: 1px solid;
+  border-color: #666666;
+  padding-bottom: 0.5em;
+}
+
+.inner h4 {
+  padding-top: 0.5em;
+  display: block;
+  clear: both;
+  font-size: 100%;
+  line-height: 1.75em;
+  border-bottom: 1px solid;
+  border-color: #666666;
+  padding-bottom: 0.5em;
+}
+
+.inner a {
+  text-decoration: underline;
 }
 
 .nav-masthead .nav-link {
