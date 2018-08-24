@@ -52,12 +52,15 @@
 
                 <div class="col-md-6">
                     <div class="text-right">
-                        <select onChange="loadSample(this.value)" class="form-control" style="display: inline-block">
+                        <!--                         
+                        <select onChange="loadSample(this.value)" class="form-control" style="display: inline; float: left;">
                             <option value=" snake.asm ">Snake</option>
                             <option value="tube.asm ">Tube</option>
-                        </select>
+                        </select> -->
+
                         <button onClick="assemble()">Assemble</button>
                         <button onClick="runAsm()">Run</button>
+
                     </div>
                     <textarea id="asmCode"></textarea>
                     <a href="#" onClick="loadSample('snake.asm')">Snake.asm</a>
