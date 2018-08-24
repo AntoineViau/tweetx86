@@ -16,7 +16,7 @@ $(document).ready(() => {
     $("#base64length").text(base64code.length);
     runBase64();
   } else {
-    fetch("tube.asm")
+    fetch("alok-menghrajani.asm")
       .then(response => response.text())
       .then(asmCode => $("#asmCode").val(asmCode));
   }
