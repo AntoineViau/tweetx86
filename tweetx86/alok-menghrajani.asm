@@ -1,6 +1,7 @@
 ; Code by Alok Menghrajani
 ; https://www.quaxio.com/bootable_cd_retro_game_tweet/
-; Thank you for the inspiration ! 
+; Thank you for the inspiration you gave me with this tweet : 
+; https://twitter.com/alokmenghrajani/status/1007514337592987648
 
           org 100h
           mov bl, 1                    ; Starting direction for the worm.
