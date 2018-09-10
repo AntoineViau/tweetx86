@@ -1,15 +1,15 @@
 # TweetX86
 
 Pure client-side combination of Nasm, DosBox and WebAssembly to show off your x86 skills in a tweet (or more).  
-You can play with it here : http://www.antoineviau.com/tweetx86
+You can play with it here : http://twt86.co
 
 ## What ?
 
 Enter your x86 assembly code in the text box on the left, assemble and run.  
 When you assemble, the generated binary (a .COM file) is converted to base64 in the text box on the right.  
-You can use this base64 string in the URL :
+You can use this base64 string in the URL (Snake example) :
 
-    http://127.0.0.1:8080/?c=sBPNELgAoI7Av6B9uCcnJogFsAC0hrkBALoCAM0VV1Ex/7kAfTHA86tZX0913jDkzRa4AwDNEMM=
+    http://twt86.co?c=swFoAKAHvqB9uBMAzRC/wPi5gAjzqqqBxz4Bc/jkYDxIchE8UHcNN5hISHIFLAJrwLCJwwHetIa2780VtEUmMCR72uvB
 
 The max code size is limited by your browser capabilities (memory) and specifications ([URL length](https://stackoverflow.com/questions/812925/what-is-the-maximum-possible-length-of-a-query-string)).  
 But you can code far more than a tweet !

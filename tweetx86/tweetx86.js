@@ -34,12 +34,35 @@ function assemble() {
       let base64code = base64encode(binCode);
       $("#base64code").val(base64code);
       $("#base64length").text(base64code.length);
+      let url = `http://${document.location.host}?c=${base64code}`;
+      $("#link").val(url);
+      $("#link-group").show();
+
+      let showOffText = "TweetX86: " + base64code + "\n" + url;
+      $("#showOff").val(showOffText);
+
       return binCode;
     },
     error => {
       $("#base64code").val(error);
     }
   );
+}
+
+function copyLinkToClipboard() {
+  $("#link").select();
+  document.execCommand("copy");
+}
+
+function createTweet() {
+  let base64code = $("#base64code").val();
+  let url = $("#link").val();
+  let showOffText = "Checkout this TweetX86! " + url + " " + base64code;
+  $("#link").val(showOffText);
+  copyLinkToClipboard();
+  $("#link").val(url);
+  $("#copy-button").text("Copied !");
+  setTimeout(() => $("#copy-button").text("Copy link"), 2000);
 }
 
 function disassemble() {

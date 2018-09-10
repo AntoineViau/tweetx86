@@ -53,15 +53,8 @@
 
                 <div class="col-md-6">
                     <div class="text-right">
-                        <!--                         
-                        <select onChange="loadSample(this.value)" class="form-control" style="display: inline; float: left;">
-                            <option value=" snake.asm ">Snake</option>
-                            <option value="tube.asm ">Tube</option>
-                        </select> -->
-
                         <button onClick="assemble()">Assemble</button>
                         <button onClick="runAsm()">Run</button>
-
                     </div>
                     <textarea id="asmCode"></textarea>
                     <a href="#" onClick="loadSample('snake.asm')">Snake.asm</a> -
@@ -82,6 +75,29 @@
                         <div class="text-right">
                             Length:
                             <span id="base64length">0</span>
+                        </div>
+                        <div id="link-group">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Link" aria-label="Recipient's username" aria-describedby="copy-button"
+                                    id="link">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="copy-button" onClick="copyLinkToClipboard()">Copy
+                                        link
+                                    </span>
+                                    <span class="input-group-text" id="create-tweet" onClick="createTweet()">Create Tweet
+                                    </span>
+
+                                </div>
+
+                            </div>
+                            <!-- 
+                            <textarea id="showOff" style="display:none"></textarea>
+                            <div class="text-right">
+                                <button onClick="copyShowOffToClipboard()">Copy Tweet to clipboard</button>
+                                <button onClick="copyLinkToClipboard()">Copy Link to clipboard</button>
+
+                            </div> -->
+
                         </div>
                     </div>
                     <div id="cycles">
