@@ -37,10 +37,6 @@ function assemble() {
       let url = `http://${document.location.host}?c=${base64code}`;
       $("#link").val(url);
       $("#link-group").show();
-
-      let showOffText = "TweetX86: " + base64code + "\n" + url;
-      $("#showOff").val(showOffText);
-
       return binCode;
     },
     error => {
