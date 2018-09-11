@@ -53,6 +53,8 @@ function assemble() {
 function copyLinkToClipboard() {
   $("#link").select();
   document.execCommand("copy");
+  $("#copy-button").text("Copied !");
+  setTimeout(() => $("#copy-button").text("Copy link"), 2000);
 }
 
 function createTweet() {
@@ -62,8 +64,6 @@ function createTweet() {
   $("#link").val(showOffText);
   copyLinkToClipboard();
   $("#link").val(url);
-  $("#copy-button").text("Copied !");
-  setTimeout(() => $("#copy-button").text("Copy link"), 2000);
 }
 
 function disassemble() {
