@@ -8,7 +8,10 @@ $(document).ready(() => {
   $("#base64code").bind("input propertychange", () => {
     $("#base64length").text($("#base64code").val().length);
   });
-  let base64code = new URL(window.location.href).searchParams.get("c");
+  let base64codeQueryStr = new URL(window.location.href).searchParams.get("c");
+  let base64code = base64codeQueryStr
+    ? decodeURIComponent(base64codeQueryStr)
+    : "";
   let cycles = new URL(window.location.href).searchParams.get("s") || 10000;
   $("#cycles-input").val(cycles);
   if (base64code) {
@@ -33,9 +36,11 @@ function assemble() {
     binCode => {
       let base64code = base64encode(binCode);
       $("#base64code").val(base64code);
-      $("#base64length").text(base64code.length);
-      let url = `http://${document.location.host}?c=${base64code}`;
-      $("#link").val(url);
+      let base64codeQueryStr = encodeURIComponent(base64code);
+      $("#base64length").text(base64codeQueryStr.length);
+      $("#link").val(
+        `http://${document.location.host}?c=${base64codeQueryStr}`
+      );
       $("#link-group").show();
       return binCode;
     },
