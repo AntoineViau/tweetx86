@@ -51,14 +51,23 @@
         <main role="main" class="inner cover">
             <div class="row">
 
-                <div class="col-md-6">
-                    <div class="text-right">
-                        <button onClick="assemble()">Assemble</button>
-                        <button onClick="runAsm()">Run</button>
+                <div class="col-md-6" style="padding:0; margin:0">
+                    <div class="row">
+                        <div class="text-right row col-md-6">
+                            Examples:&nbsp;
+                            <a href="#" onClick="loadSample('snake.asm')">Snake.asm</a>
+                            &nbsp;-&nbsp;
+                            <a href="#" onClick="loadSample('tube.asm')">Tube.asm</a>
+
+
+
+                        </div>
+                        <div class="text-right col-md-6" style="padding:0; margin:0">
+                            <button onClick="assemble()">Assemble</button>
+                            <button onClick="runAsm()">Run</button>
+                        </div>
                     </div>
                     <textarea id="asmCode"></textarea>
-                    <a href="#" onClick="loadSample('snake.asm')">Snake.asm</a> -
-                    <a href="#" onClick="loadSample('tube.asm')">Tube.asm</a>
                     <div id="nasm">
                     </div>
                     <div id="ndisasm">
