@@ -85,7 +85,6 @@ function getCyclesInSource() {
 
 function runAsm() {
   $("#run").show();
-  return;
   return assemble().then(binCode => {
     launchDosbox(binCode);
   });
