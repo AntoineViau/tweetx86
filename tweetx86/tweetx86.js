@@ -19,7 +19,7 @@ $(document).ready(() => {
     $("#base64length").text(base64code.length);
     runBase64();
   } else {
-    loadSample("snake.asm");
+    //loadSample("snake.asm");
   }
 });
 
@@ -76,6 +76,7 @@ function disassemble() {
 }
 
 function runAsm() {
+  $("#run").show();
   return assemble().then(binCode => {
     launchDosbox(binCode);
   });
