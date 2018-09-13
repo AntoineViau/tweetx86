@@ -5,7 +5,7 @@ You can play with it here : http://twt86.co
 
 ## What ?
 
-Enter your x86 assembly code in the text box on the left, assemble and run.  
+Enter your x86 assembly code in the text area, or load one of the examples, and click the Run button.  
 When you assemble, the generated binary (a .COM file) is converted to base64 in the text box on the right.  
 You can use this base64 string in the URL (Snake example) :
 
