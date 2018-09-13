@@ -54,29 +54,21 @@
 
                 <div class="col-md-6" style="padding:0; margin:0">
                     <div class="row">
-                        <div class="text-right row col-md-6">
+                        <div class="text-right row col-md-8">
                             Examples:&nbsp;
                             <a href="#" onClick="loadSample('snake.asm')">Snake.asm</a>
                             &nbsp;-&nbsp;
                             <a href="#" onClick="loadSample('tube.asm')">Tube.asm</a>
+                            &nbsp;-&nbsp;
+                            <a href="#" onClick="loadSample('wolf64.asm')">Wolf64.asm</a>
                         </div>
-                        <div class="text-right col-md-6" style="padding:0; margin:0">
+                        <div class="text-right col-md-4" style="padding:0; margin:0">
                             <button onClick="$('#asmCode').val('')">Clear</button>
                             <!-- <button onClick="assemble()">Assemble</button> -->
                             <button onClick="runAsm()">Run</button>
                         </div>
                     </div>
                     <textarea id="asmCode" placeholder="Put your assembly code here or load an example, then click the Run button."></textarea>
-                    <div id="cycles">
-                        Adjust the run speed:
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1">Dosbox Cycles</span>
-                            </div>
-                            <input id="cycles-input" type="number" min="1" class="form-control" />
-                        </div>
-                    </div>
-
                     <div id="nasm">
                     </div>
                     <div id="ndisasm">
@@ -89,37 +81,61 @@
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" placeholder="Link" aria-label="Link" aria-describedby="copy-button" id="link">
                                 <div class="input-group-append">
-                                    <span class="input-group-text" id="copy-button" onClick="copyLinkToClipboard()">Copy
+                                    <button class="btn btn-outline-secondary" type="button" onClick="copyLinkToClipboard()">Copy
+                                        link
+                                    </button>
+                                    <button class="btn btn-outline-secondary" type="button" id="create-tweet" onClick="createTweet()">Create
+                                        Tweet
+                                    </button>
+                                    <!-- <span class="input-group-text" id="copy-button" onClick="copyLinkToClipboard()">Copy
                                         link
                                     </span>
                                     <span class="input-group-text" id="create-tweet" onClick="createTweet()">Create Tweet
-                                    </span>
+                                    </span> -->
 
                                 </div>
 
                             </div>
                         </div>
 
-                        <div id="dosbox" class="text-center">
-                        </div>
+                        <div id="cycles">
+                            Adjust the run speed
+                            <span class="small"> (cycles can be set in the source by adding <i>;cycles=xxx</i>)</span>
+                            <div class="input-group mb-3">
 
-                        <div style="display: block;">
-                            <!-- <div class="text-right">
-                                <button onClick="runBase64()">Run</button>
-                                <button onClick="disassemble()">Disassemble</button>
-                            </div> -->
-                            Your binary code (base64 format):
-                            <textarea id="base64code"></textarea>
-                            <!-- <div class="text-right">
-                                Length:
-                                <span id="base64length">0</span>
-                            </div> -->
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Dosbox Cycles</span>
+                                </div>
+                                <input id="cycles-input" type="number" min="1" class="form-control" />
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" onClick="runBase64()">Run</button>
+                                </div>
+
+
+                            </div>
                         </div>
                     </div>
 
+                    <div id="dosbox" class="text-center">
+                    </div>
+
+                    <div style="display: block;">
+                        <!-- <div class="text-right">
+                                <button onClick="runBase64()">Run</button>
+                                <button onClick="disassemble()">Disassemble</button>
+                            </div> -->
+                        Your binary code (base64 format):
+                        <textarea id="base64code"></textarea>
+                        <!-- <div class="text-right">
+                                Length:
+                                <span id="base64length">0</span>
+                            </div> -->
+                    </div>
                 </div>
+
             </div>
-        </main>
+    </div>
+    </main>
 
     </div>
 

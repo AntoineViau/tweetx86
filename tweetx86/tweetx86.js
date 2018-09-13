@@ -12,7 +12,6 @@ $(document).ready(() => {
   let base64code = base64codeQueryStr
     ? decodeURIComponent(base64codeQueryStr)
     : "";
-  debugger;
   let cycles = new URL(window.location.href).searchParams.get("s") || 10000;
   $("#cycles-input").val(cycles);
   if (base64code) {
@@ -76,8 +75,17 @@ function disassemble() {
   });
 }
 
+function getCyclesInSource() {
+  let code = $("#asmCode").val();
+  let res = /cycles=\d+/.exec(code);
+  let cycles = res ? res[0].substr("cycles=".length) : $("#cycles-input").val();
+  $("#cycles-input").val(cycles);
+  console.log($("#cycles-input").val());
+}
+
 function runAsm() {
   $("#run").show();
+  return;
   return assemble().then(binCode => {
     launchDosbox(binCode);
   });
