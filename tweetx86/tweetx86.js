@@ -12,6 +12,7 @@ $(document).ready(() => {
   let base64code = base64codeQueryStr
     ? decodeURIComponent(base64codeQueryStr)
     : "";
+  debugger;
   let cycles = new URL(window.location.href).searchParams.get("s") || 10000;
   $("#cycles-input").val(cycles);
   if (base64code) {
@@ -83,6 +84,7 @@ function runAsm() {
 }
 
 function runBase64() {
+  $("#run").show();
   let base64code = $("#base64code").val();
   let binCode = base64decode(base64code);
   return launchDosbox(binCode);
